@@ -1,0 +1,66 @@
+.wrapper {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+}
+
+.landing-page {
+  display: flex;
+  flex-flow: row nowrap;
+  height: max-content;
+  justify-content: space-between;
+}
+
+.landing-page .flex-item:nth-child(1) {
+  width: 42%;
+  height: max-content;
+  padding: 0 15px;
+}
+
+.landing-page .flex-item:nth-child(2) {
+  width: max-content;
+  height: max-content;
+  padding: 0 15px;
+}
+
+.logo-dumbgram {
+  width: 95%;
+  margin-left: -15px;
+  margin-bottom: 45px;
+}
+
+.tagline, .action {
+  margin-left: 25px;
+}
+
+.tagline {
+  margin-bottom: 35px;
+}
+
+.tagline h3 {
+  font-weight: 600;
+  font-size: 3vw; /* From 48px */
+  line-height: 4vw; /* From 72px */
+  color: white;
+}
+
+.tagline p {
+  width: 85%;
+  font-weight: normal;
+  font-size: 1vw; /* From 18px */
+  line-height: 1.5vw; /* From 25px */
+  color: #6A6A6A;
+}
+
+.landing-page .flex-item:nth-child(2) img {
+  width: 200px;
+  margin: 5px;
+}
+
+.landing-page .gallery-wrapper {
+  display: flex;
+  flex-flow: column wrap;
+  max-height: 75vh;
+  min-width: 635px;
+  align-content: flex-start;
+}
