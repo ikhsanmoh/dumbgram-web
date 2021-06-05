@@ -22,3 +22,8 @@ img {
   width: 1240px;
   margin: auto;
 }
+
+a {
+  color: white;
+  text-decoration: none;
+}

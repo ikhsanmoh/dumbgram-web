@@ -11,13 +11,23 @@
   cursor: pointer;
 }
 
-.btn-login {
+.btn[type="submit"] {
+  border: none;
+  color: #FFF;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.btn-bg-main {
   background: linear-gradient(90deg, #4DD4F7 0%, #9090FB 36.46%, #FF6B81 71.35%, #FBDF63 100%);
   color: white;
   margin-right: 15px;
 }
 
-.btn-register {
+.btn-bg-transparent {
   background: transparent;
   color: #b7b7b7;
 }
