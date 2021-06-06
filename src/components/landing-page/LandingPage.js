@@ -3,6 +3,7 @@ import logo from '../../assets/logo-dumbgram.png'
 import Photos from '../../assets/Assets'
 import Button from '../button/Button'
 import RegistrationModal from '../modal/RegistrationModal'
+import LoginModal from '../modal/LoginModal'
 import './landing-page.css'
 
 const LandingPage = () => {
@@ -24,13 +25,15 @@ const LandingPage = () => {
   }
 
   const closeModal = () => {
-    console.log("Modal Overlay Clicked")
+    console.log("Modal Closed")
     setModalComponent('')
   }
 
   const modalEventHandler = (e) => {
     console.log('Button Clicked')
-    if ('regist' === e?.target?.id || 'regist' === e)
+    if ('login' === e?.target?.id || 'login' === e)
+      setModalComponent(<LoginModal switch_modal={modalEventHandler} close_modal={closeModal} users_registed={users} />)
+    else if ('regist' === e?.target?.id || 'regist' === e)
       setModalComponent(<RegistrationModal switch_modal={modalEventHandler} close_modal={closeModal} onAddUser={addUser} />)
     else
       console.error('Button ID Invalid!')

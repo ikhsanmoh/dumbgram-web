@@ -5,8 +5,9 @@ const Button = ({ label, id, class_name, on_click }) => {
 }
 
 Button.defaultProps = {
-  label: 'Button',
+  id: '',
   class_name: 'btn',
+  label: 'Button',
   on_click: () => console.log('Button Clicked')
 }
 
