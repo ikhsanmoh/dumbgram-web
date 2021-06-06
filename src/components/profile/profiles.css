@@ -1,0 +1,76 @@
+.user-profile-container {
+  position: relative;
+  padding: 0 50px;
+}
+
+.user-profile-container > * {
+  margin-top: 30px;
+}
+
+.user-profile-container .edit-icon {
+  position: absolute;
+  top: 0;
+  right: 40px;
+  width: 20px;
+}
+
+.user-profile-container .profile {
+  display: flex;
+  flex-flow: column nowrap;
+  text-align: center;
+}
+
+.user-profile-container .profile .border {
+  display: grid;
+  place-items: center;
+  margin: 0 auto 30px auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #4DD4F7 0%, #9090FB 36.46%, #FF6B81 71.35%, #FBDF63 100%);
+}
+
+.user-profile-container .profile .circle {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 110%;
+}
+
+.user-profile-container .info {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.user-profile-container .info > * {
+  flex: 1 1 30%;
+}
+
+.user-profile-container .info .followers {
+  border-right: 1px solid rgba(106, 106, 106, 0.3);
+  border-left: 1px solid rgba(106, 106, 106, 0.3);
+}
+
+.user-profile-container .navigation {
+  border-top: 1px solid rgba(106, 106, 106, 0.3);
+  border-bottom: 1px solid rgba(106, 106, 106, 0.3);
+}
+
+.user-profile-container .navigation > *,
+.user-profile-container .logout {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.user-profile-container .navigation > * > .icon,
+.user-profile-container .logout .icon {
+  width: 22px;
+  margin-right: 20px;
+}

@@ -1,0 +1,62 @@
+.posts-wrapper {
+  /* display: flex;
+  flex-direction: column; */
+  width: 100%;
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+}
+
+.card {
+  /* border: 2px solid rgba(255,255,255,.20); */
+  height: max-content;
+  /* width: 33% */
+}
+
+.card .thumbnail {
+  width: 100%;
+  height: max-content;
+  cursor: pointer;
+}
+
+.card .thumbnail img {
+  border-radius: 10px;
+}
+.card .info {
+  display: flex;
+  padding: 10px 0;
+  align-items: center;
+}
+
+.card .info .user {
+  display: inherit;
+  flex: 1;
+}
+
+.card .info .user > * {
+  margin-right: 10px;
+}
+
+.card .info .user .user-img {
+  width: 25px;
+}
+
+.card .info .action {
+  display: inherit;
+}
+
+.card .info .action > * {
+  margin-left: 10px;
+}
+
+.like, .comment, .message {
+  width: 20px;
+  height: auto;
+}
+
+.card .likes {
+  font-size: 15px;
+  text-align: right;
+  color: #ABABAB;
+}

@@ -40,34 +40,36 @@ const LandingPage = () => {
   }
 
   return (
-    <div className="wrapper">
-      <div className="landing-page">
-        <div className="flex-item">
-          <div className="logo-dumbgram">
-            <img src={logo} alt="" />
+    <div className="container">
+      <div className="wrapper">
+        <div className="landing-page">
+          <div className="flex-item">
+            <div className="logo-dumbgram">
+              <img src={logo} alt="" />
+            </div>
+            <div className="tagline">
+              <h3>Share your best photos or videos</h3>
+              <p>Join now, share your creations with another people and enjoy other creations.</p>
+            </div>
+            <div className="action">
+              <Button class_name="btn btn-bg-main" id="login" label="Login" on_click={modalEventHandler} />
+              <Button class_name="btn btn-bg-transparent" id="regist" label="Register" on_click={modalEventHandler} />
+            </div>
           </div>
-          <div className="tagline">
-            <h3>Share your best photos or videos</h3>
-            <p>Join now, share your creations with another people and enjoy other creations.</p>
-          </div>
-          <div className="action">
-            <Button class_name="btn btn-bg-main" id="login" label="Login" on_click={modalEventHandler} />
-            <Button class_name="btn btn-bg-transparent" id="regist" label="Register" on_click={modalEventHandler} />
+          <div className="flex-item">
+            <div className="gallery-wrapper">
+              {
+                Photos.map(
+                  (img, index) => <img className="gallery-items" key={index} src={img.file} alt={img.name}></img>
+                )
+              }
+            </div>
           </div>
         </div>
-        <div className="flex-item">
-          <div className="gallery-wrapper">
-            {
-              Photos.map(
-                (img, index) => <img className="gallery-items" key={index} src={img.file} alt={img.name}></img>
-              )
-            }
-          </div>
-        </div>
+
+        {ModalComponent}
+
       </div>
-
-      {ModalComponent}
-
     </div>
   )
 }

@@ -31,3 +31,8 @@
   background: transparent;
   color: #b7b7b7;
 }
+
+.btn-bg-dark {
+  background: rgba(171, 171, 171, 0.15);
+  color: white;
+}
