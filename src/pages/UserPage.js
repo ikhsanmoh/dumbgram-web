@@ -1,7 +1,8 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
 import UserProfile from '../components/profile/UserProfile'
 import PeopleProfile from '../components/profile/PeopleProfiles'
+import CreatePost from './CreatePost';
 
 import Feed from './Feed'
 import Explore from './Explore';
@@ -46,17 +47,19 @@ const UserPage = () => {
             <img className="icon" src={iMsg} alt="icon" />
           </div>
           <div className="create-post">
-            <a href="?" style={createPostStyle} onClick={e => e.preventDefault()}>
+            <Link style={createPostStyle} to='/create-post'>
               <img className="icon" src={iAdd} alt="add" />
               <span style={{ marginLeft: '10px' }}>
                 Create Post
               </span>
-            </a>
+            </Link>
           </div>
         </header>
         <aside className="sidenav">
           <div className="logo-brand">
-            <img src={logo} alt="logo-dumbgram" />
+            <Link to='/'>
+              <img src={logo} alt="logo-dumbgram" />
+            </Link>
           </div>
           <Switch>
             <Route exact path="/">
@@ -66,6 +69,9 @@ const UserPage = () => {
               <UserProfile />
             </Route>
             <Route exact path="/explore">
+              <UserProfile />
+            </Route>
+            <Route exact path="/create-post">
               <UserProfile />
             </Route>
             <Route exact path="/zayn">
@@ -86,6 +92,9 @@ const UserPage = () => {
             </Route>
             <Route exact path="/explore">
               <Explore />
+            </Route>
+            <Route exact path="/create-post">
+              <CreatePost />
             </Route>
           </Switch>
         </main>

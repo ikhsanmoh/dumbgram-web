@@ -1,0 +1,31 @@
+.create-post-wrapper {
+  margin-top: 30px;
+}
+.create-post-wrapper form {
+  display: flex;
+  flex-flow: column nowrap;
+  width: max-width;
+}
+
+.create-post-wrapper form > * {
+  margin-top: 20px;
+}
+
+#caption {
+  padding: 10px;
+  outline: none;
+  background: rgba(210, 210, 210, 0.25);
+  border: 2px solid #D2D2D2;
+  border-radius: 5px;
+  color: white;
+  width: 96%;
+}
+
+.create-post-wrapper form button {
+  width: 300px;
+}
+
+.create-post-wrapper form input[type="submit"] {
+  width: 200px;
+  float: right;
+}
