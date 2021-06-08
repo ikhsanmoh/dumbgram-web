@@ -1,0 +1,84 @@
+.feed-detail-wrapper {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  width: 800px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.feed-detail-wrapper .close-modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  margin: 10px 10px 0 0 ;
+  width: max-width;
+  height: max-height;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.detail-left img{
+  width: 490px;
+  border-radius: 5px;
+}
+
+.detail-right .profile-photo-small {
+  width: 24px;
+  margin-right: 10px;
+}
+
+.detail-right {
+  flex: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 20px 20px;
+}
+
+.detail-right .row-1 {
+  display: flex;
+  flex-flow: row nowrap;  
+  height: max-height;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(171, 171, 171, 0.3);
+}
+
+.detail-right .row-2 {
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1;
+  margin: 22px 0;
+}
+
+.detail-right .row-2 .people {
+  display: flex;
+  flex-flow: row nowrap;  
+  padding: 8px 0;
+}
+
+.detail-right .row-3 {
+  height: max-height;
+}
+
+.detail-right .row-3 .actions {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+}
+
+.detail-right .row-3 .actions > * {
+  margin-left: 10px;
+  width: 15px;
+}
+
+.detail-right .row-3 .likes {
+  margin-top: 14px;
+  text-align: right
+}
+
+.detail-right .row-3 .input-comment input[type="text"] {
+  height: 40px;
+  border: 0;
+}

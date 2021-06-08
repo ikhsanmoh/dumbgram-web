@@ -11,7 +11,6 @@ import './profiles.css';
 const UserProfile = () => {
 
   const src = Photos.find(p => p.name === 'img6')
-  console.log(src)
   const photoProfile = {
     backgroundImage: `url(${src.file})`
   }

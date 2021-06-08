@@ -1,8 +1,10 @@
 import { useState, useContext } from 'react'
 import { UserContext } from '../../context/userContext'
-import './modal.css'
+import './OldModal.css'
 
-const LoginModal = ({ switch_modal, close_modal, users_registed }) => {
+import Modal from './Modal';
+
+const LoginModal = ({ switchModal, modalStat, modalClose, usersRegisted }) => {
   const [state, dispatch] = useContext(UserContext)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -11,7 +13,7 @@ const LoginModal = ({ switch_modal, close_modal, users_registed }) => {
     e.preventDefault()
 
     let auth = false;
-    auth = users_registed.find(user => user.email === email && user.password === password)
+    auth = usersRegisted.find(user => user.email === email && user.password === password)
 
     if (auth) {
       dispatch({
@@ -19,7 +21,7 @@ const LoginModal = ({ switch_modal, close_modal, users_registed }) => {
         payload: { ...auth }
       })
       alert('Login success!')
-      close_modal()
+      modalClose()
     } else {
       alert('Login Unsuccessful, Email atau Password salah!')
     }
@@ -30,9 +32,7 @@ const LoginModal = ({ switch_modal, close_modal, users_registed }) => {
 
   return (
     <>
-      <div className="modal-overlay" onClick={close_modal}>
-      </div>
-      <div className="modal">
+      <Modal modalStat={modalStat} modalClose={modalClose}>
         <h1>Login</h1>
         <form onSubmit={onSubmitHandler}>
           <input
@@ -60,15 +60,20 @@ const LoginModal = ({ switch_modal, close_modal, users_registed }) => {
               href='?'
               onClick={(e) => {
                 e.preventDefault()
-                switch_modal(e.target.id)
+                switchModal(e.target.id)
               }}
             > Here
           </a>
           </b>
         </p>
-      </div>
+      </Modal>
     </>
   )
+}
+
+LoginModal.defaultProps = {
+  modalStat: false,
+  switchModal: () => console.log('The switchModal method hasnt defined yet'),
 }
 
 export default LoginModal

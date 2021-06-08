@@ -1,7 +1,9 @@
 import { useState } from 'react'
-import './modal.css'
+import './OldModal.css'
 
-const RegistrationModal = ({ switch_modal, close_modal, onAddUser }) => {
+import Modal from './Modal';
+
+const RegistrationModal = ({ switchModal, modalStat, modalClose, onAddUser }) => {
   const [email, setEmail] = useState('')
   const [name, setName] = useState('')
   const [username, setUsername] = useState('')
@@ -11,15 +13,19 @@ const RegistrationModal = ({ switch_modal, close_modal, onAddUser }) => {
     e.preventDefault()
 
     onAddUser({ email, name, username, password })
+
+    setEmail('')
+    setName('')
+    setUsername('')
+    setPassword('')
+
     alert('Registration Success!')
-    close_modal()
+    modalClose()
   }
 
   return (
     <>
-      <div className="modal-overlay" onClick={close_modal}>
-      </div>
-      <div className="modal">
+      <Modal modalStat={modalStat} modalClose={modalClose}>
         <h1>Registration</h1>
         <form onSubmit={onSubmitHandler}>
           <input
@@ -55,19 +61,19 @@ const RegistrationModal = ({ switch_modal, close_modal, onAddUser }) => {
         </form>
         <p>
           Already have an account ? Klik
-          <b>
+        <b>
             <a
               id='login'
               href="?"
               onClick={(e) => {
                 e.preventDefault()
-                switch_modal(e.target.id)
+                switchModal(e.target.id)
               }}
             > Here
-            </a>
+          </a>
           </b>
         </p>
-      </div>
+      </Modal>
     </>
   )
 }
