@@ -1,8 +1,7 @@
 import { useState, useContext } from 'react'
 import { UserContext } from '../../context/userContext'
-import './OldModal.css'
-
 import Modal from './Modal';
+import './FormsModal.css'
 
 const LoginModal = ({ switchModal, modalStat, modalClose, usersRegisted }) => {
   const [state, dispatch] = useContext(UserContext)
@@ -33,39 +32,42 @@ const LoginModal = ({ switchModal, modalStat, modalClose, usersRegisted }) => {
   return (
     <>
       <Modal modalStat={modalStat} modalClose={modalClose}>
-        <h1>Login</h1>
-        <form onSubmit={onSubmitHandler}>
-          <input
-            type="text"
-            placeholder="Email"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            autoFocus
-            required
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-            required
-          />
-          <input type="submit" value="Login" className="btn btn-bg-main" />
-        </form>
-        <p>
-          Don't have an account ? Klik
+
+        <div className="form-modal">
+          <h1>Login</h1>
+          <form onSubmit={onSubmitHandler}>
+            <input
+              type="text"
+              placeholder="Email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              autoFocus
+              required
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+              required
+            />
+            <input type="submit" value="Login" className="btn btn-bg-main" />
+          </form>
+          <p>
+            Don't have an account ? Klik
           <b>
-            <a
-              id='regist'
-              href='?'
-              onClick={(e) => {
-                e.preventDefault()
-                switchModal(e.target.id)
-              }}
-            > Here
+              <a
+                id='regist'
+                href='?'
+                onClick={(e) => {
+                  e.preventDefault()
+                  switchModal(e.target.id)
+                }}
+              > Here
           </a>
-          </b>
-        </p>
+            </b>
+          </p>
+        </div>
       </Modal>
     </>
   )

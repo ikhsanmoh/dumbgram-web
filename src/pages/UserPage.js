@@ -3,9 +3,12 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import UserProfile from '../components/profile/UserProfile'
 import PeopleProfile from '../components/profile/PeopleProfiles'
 import CreatePost from './CreatePost';
-
 import Feed from './Feed'
 import Explore from './Explore';
+import Messages from './message/Mesagges'
+import Chat from './message/Chat'
+
+
 import logo from '../assets/logo-dumbgram.png'
 import iBell from '../assets/icons/bell-icon.png'
 import iMsg from '../assets/icons/paper-plane-icon.png'
@@ -43,9 +46,11 @@ const UserPage = () => {
           <div className="notification">
             <img className="icon" src={iBell} alt="icon" />
           </div>
-          <div className="massages">
-            <img className="icon" src={iMsg} alt="icon" />
-          </div>
+          <Link to="/messages">
+            <div className="massages">
+              <img className="icon" src={iMsg} alt="icon" />
+            </div>
+          </Link>
           <div className="create-post">
             <Link style={createPostStyle} to='/create-post'>
               <img className="icon" src={iAdd} alt="add" />
@@ -61,23 +66,28 @@ const UserPage = () => {
               <img src={logo} alt="logo-dumbgram" />
             </Link>
           </div>
-          <Switch>
-            <Route exact path="/">
-              <UserProfile />
-            </Route>
-            <Route exact path="/feed">
-              <UserProfile />
-            </Route>
-            <Route exact path="/explore">
-              <UserProfile />
-            </Route>
-            <Route exact path="/create-post">
-              <UserProfile />
-            </Route>
-            <Route exact path="/zayn">
-              <PeopleProfile />
-            </Route>
-          </Switch>
+          <div className="sidenav-wrapper">
+            <Switch>
+              <Route exact path="/">
+                <UserProfile />
+              </Route>
+              <Route exact path="/feed">
+                <UserProfile />
+              </Route>
+              <Route exact path="/explore">
+                <UserProfile />
+              </Route>
+              <Route path="/messages/">
+                <Messages />
+              </Route>
+              <Route exact path="/create-post">
+                <UserProfile />
+              </Route>
+              <Route exact path="/zayn">
+                <PeopleProfile />
+              </Route>
+            </Switch>
+          </div>
         </aside>
         <main className="main">
           <Switch>
@@ -92,6 +102,12 @@ const UserPage = () => {
             </Route>
             <Route exact path="/explore">
               <Explore />
+            </Route>
+            <Route exact path="/messages">
+              <Chat />
+            </Route>
+            <Route path="/messages/1">
+              <Chat personalChat={['Hello Lisa']} />
             </Route>
             <Route exact path="/create-post">
               <CreatePost />

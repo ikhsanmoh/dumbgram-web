@@ -8,8 +8,9 @@ import img7 from "./photo-7.png";
 import img8 from "./photo-8.png";
 
 import pp1 from './photo-prof.png'
-import pp2 from './photo-prof1.png'
+import pp2 from './photo-prof2.png'
 import pp3 from './photo-prof3.png'
+import pp4 from './photo-prof1.png'
 
 
 const Photos = [
@@ -27,6 +28,7 @@ export const PhotoCircle = [
   { name: 'pp1', file: pp1 },
   { name: 'pp2', file: pp2 },
   { name: 'pp3', file: pp3 },
+  { name: 'pp4', file: pp4 },
 ]
 
 export default Photos

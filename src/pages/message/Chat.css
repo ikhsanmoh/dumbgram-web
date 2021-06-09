@@ -1,0 +1,46 @@
+.chat-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100%;
+}
+
+.chat-wrapper .photo-profile-circle {
+  width: 50px;
+  padding-right: 24px;
+}
+
+.chat-wrapper .empty-chat {
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.chat-wrapper .chat-history {
+  flex: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  padding: 0 20px 43px 20px;
+}
+
+.chat-wrapper .chat-history .chat {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.chat-wrapper .chat-history .text {
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.chat-wrapper input[type="text"] {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 17px 34px;
+  background: rgba(210, 210, 210, 0.25);
+  border: 0;
+  font-weight: 500;
+font-size: 18px;
+  outline: 0;
+  color: white;
+}

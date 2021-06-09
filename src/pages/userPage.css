@@ -21,7 +21,7 @@
   grid-area: header;
   display: flex;
   align-items: center;
-  padding: 20px 35px;
+  padding: 33px 28px 0 28px;
 }
 
 .header > * {
@@ -70,13 +70,17 @@
   scrollbar-width: none;  /* Firefox */
 }
 
+.sidenav-wrapper {
+  padding: 0 50px;
+}
+
 .sidenav::-webkit-scrollbar {
   display: none;
 }
 
 .sidenav .logo-brand {
   height: 50px;
-  padding: 20px 0 20px 50px
+  padding: 22px 0 0 50px
 }
 
 .sidenav .logo-brand img {
@@ -90,5 +94,5 @@
 
 .main {
   grid-area: main;
-  padding: 0 50px
+  padding: 50px 43px 85px 43px
 }
