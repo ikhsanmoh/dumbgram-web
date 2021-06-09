@@ -1,18 +1,19 @@
-.create-post-wrapper {
+.edit-profile-wrapper {
   margin-top: 30px;
 }
-.create-post-wrapper form {
+.edit-profile-wrapper form {
   display: flex;
   flex-flow: column nowrap;
   width: max-width;
 }
 
-.create-post-wrapper form > * {
+.edit-profile-wrapper form > * {
   margin-top: 20px;
 }
 
-#caption {
-  padding: 10px;
+.edit-profile-wrapper form input[type="text"], #caption {
+  margin-bottom: 20px;
+  padding: 15px 10px;
   outline: none;
   background: rgba(210, 210, 210, 0.25);
   border: 2px solid #D2D2D2;
@@ -21,13 +22,13 @@
   width: 96%;
 }
 
-.create-post-wrapper form button {
+.edit-profile-wrapper form button {
   width: max-content;
   padding: 13px 15px
 }
 
-.create-post-wrapper form input[type="submit"] {
+.edit-profile-wrapper form input[type="submit"] {
   width: max-content;
-  padding: 13px 48px;
   float: right;
+  padding: 13px 48px
 }

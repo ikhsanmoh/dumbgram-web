@@ -8,7 +8,7 @@ import Photos from '../../assets/Assets';
 
 import './profiles.css';
 
-const UserProfile = () => {
+const UserProfile = ({ showEditButton }) => {
 
   const src = Photos.find(p => p.name === 'img6')
   const photoProfile = {
@@ -17,9 +17,14 @@ const UserProfile = () => {
 
   return (
     <div className="user-profile-container">
-      <div className="edit-icon">
-        <img src={iEdit} alt="icon" />
-      </div>
+      {
+        showEditButton &&
+        <Link to='/edit-profile'>
+          <div className="edit-icon">
+            <img src={iEdit} alt="icon" />
+          </div>
+        </Link>
+      }
       <div className="profile">
         <div className="photo">
           <div className="border">
@@ -72,6 +77,10 @@ const UserProfile = () => {
       </div>
     </div>
   )
+}
+
+UserProfile.defaultProps = {
+  showEditButton: true
 }
 
 export default UserProfile

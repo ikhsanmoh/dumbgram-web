@@ -7,6 +7,7 @@ import Feed from './Feed'
 import Explore from './Explore';
 import Messages from './message/Mesagges'
 import Chat from './message/Chat'
+import EditProfile from '../pages/edit-profile/EditProfile';
 
 
 import logo from '../assets/logo-dumbgram.png'
@@ -71,19 +72,22 @@ const UserPage = () => {
               <Route exact path="/">
                 <UserProfile />
               </Route>
-              <Route exact path="/feed">
+              <Route path="/edit-profile">
+                <UserProfile showEditButton={false} />
+              </Route>
+              <Route path="/feed">
                 <UserProfile />
               </Route>
-              <Route exact path="/explore">
+              <Route path="/explore">
                 <UserProfile />
               </Route>
               <Route path="/messages/">
                 <Messages />
               </Route>
-              <Route exact path="/create-post">
+              <Route path="/create-post">
                 <UserProfile />
               </Route>
-              <Route exact path="/zayn">
+              <Route path="/zayn">
                 <PeopleProfile />
               </Route>
             </Switch>
@@ -93,6 +97,9 @@ const UserPage = () => {
           <Switch>
             <Route exact path="/">
               <Feed />
+            </Route>
+            <Route path="/edit-profile">
+              <EditProfile />
             </Route>
             <Route exact path="/feed">
               <Feed />
