@@ -4,13 +4,15 @@ import './Modal.css';
 
 ReactModal.setAppElement('#root')
 
-const Modal = ({ children, modalStat, modalClose }) => {
+const Modal = ({ children, modalStat, modalClose, customStyles }) => {
+  console.log('Modal Run...', modalStat);
+  console.log(customStyles.notifModal);
   return (
     <div>
       <ReactModal
         isOpen={modalStat}
         onRequestClose={modalClose}
-        className="modal"
+        className={!customStyles ? "modal" : customStyles.notifModal}
         overlayClassName="Overlay"
       >
         {children}
@@ -22,6 +24,7 @@ const Modal = ({ children, modalStat, modalClose }) => {
 Modal.defaultProps = {
   modalStat: false,
   children: 'This is a reusable Modal.',
+  customStyles: false,
   modalClose: () => alert('The modalClose method is hasnt defined yet!')
 }
 

@@ -1,0 +1,26 @@
+.notif-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  max-width: 300px;
+}
+
+.notif-wrapper .notif-comment {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.notif-wrapper .notif-comment .notif-left {
+  width: 24px;
+  padding-right: 10px;
+}
+
+.notif-wrapper .notif-comment .notif-right {
+  font-weight: 500;
+  font-size: 14px;
+  text-align: left;
+}
+
+.notif-wrapper .notif-comment .notif-right .white-text {
+  color: white;
+}
+

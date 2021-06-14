@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
 import UserProfile from '../components/profile/UserProfile'
@@ -9,6 +11,7 @@ import Messages from './message/Mesagges'
 import Chat from './message/Chat'
 import EditProfile from '../pages/edit-profile/EditProfile';
 
+import Notification from '../components/modal/Notification';
 
 import logo from '../assets/logo-dumbgram.png'
 import iBell from '../assets/icons/bell-icon.png'
@@ -18,6 +21,12 @@ import iAdd from '../assets/icons/add-icon.png'
 import './userPage.css'
 
 const UserPage = () => {
+  const [notifModal, setNotifModal] = useState(false);
+
+  const notifModalToggle = (e) => {
+    setNotifModal(!notifModal)
+    console.log('Notif Modal Toggle...', notifModal)
+  }
 
   const inputSearchStyle = {
     backgroundImage: `url(${iSearch})`
@@ -44,8 +53,9 @@ const UserPage = () => {
               <input type="text" placeholder="Search" style={inputSearchStyle} />
             </form>
           </div>
-          <div className="notification">
+          <div className="notification" onClick={notifModalToggle}>
             <img className="icon" src={iBell} alt="icon" />
+            <Notification modalStat={notifModal} modalClose={notifModalToggle} />
           </div>
           <Link to="/messages">
             <div className="massages">

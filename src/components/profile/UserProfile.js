@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import { UserContext } from '../../context/userContext'
 
 import iEdit from '../../assets/icons/edit-icon.png'
 import iHome from '../../assets/icons/home-icon.png'
@@ -9,6 +11,14 @@ import Photos from '../../assets/Assets';
 import './profiles.css';
 
 const UserProfile = ({ showEditButton }) => {
+  const [state, dispatch] = useContext(UserContext)
+
+  const destroySession = () => {
+    dispatch({
+      type: 'LOGOUT',
+      payload: {}
+    })
+  }
 
   const src = Photos.find(p => p.name === 'img6')
   const photoProfile = {
@@ -67,7 +77,7 @@ const UserProfile = ({ showEditButton }) => {
           </div>
         </Link>
       </div>
-      <div className="logout">
+      <div className="logout" onClick={destroySession}>
         <div className="icon">
           <img src={iExit} alt="icon" />
         </div>
