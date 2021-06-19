@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
-import Photos from '../assets/Assets'
-import iFollowedUser from '../assets/photo-prof.png'
+import Photos from '../../assets/Assets'
+import iFollowedUser from '../../assets/photo-prof.png'
 
-import iLike from "../assets/icons/love-icon.png"
-import iComment from "../assets/icons/comment-icon.png"
-import iMsg from "../assets/icons/paper-plane-icon.png"
-import './feed.css'
+import iLike from "../../assets/icons/love-icon.png"
+import iComment from "../../assets/icons/comment-icon.png"
+import iMsg from "../../assets/icons/paper-plane-icon.png"
+import './Feed.css'
 
-import DetailFeed from '../components/modal/DetailFeed'
+import DetailFeed from '../../components/modal/DetailFeed'
 
 const Feed = ({ title }) => {
   const [detailModal, setDetailModal] = useState(false);

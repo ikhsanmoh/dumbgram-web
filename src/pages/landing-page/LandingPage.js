@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import logo from '../../assets/logo-dumbgram.png'
 import Photos from '../../assets/Assets'
-import Button from '../button/Button'
-import LoginModal from '../modal/LoginModal'
-import './landing-page.css'
+import Button from '../../components/button/Button'
+import LoginModal from '../../components/modal/LoginModal'
+import './LandingPage.css'
 
-import RegistrationModal from '../modal/RegistrationModal'
+import RegistrationModal from '../../components/modal/RegistrationModal'
 
 const LandingPage = () => {
   const [modalLogin, setModalLogin] = useState(false);

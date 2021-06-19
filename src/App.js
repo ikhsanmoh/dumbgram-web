@@ -1,8 +1,8 @@
 import { useContext } from 'react'
 // import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { UserContext } from './context/userContext'
-import LandingPage from './components/landing-page/LandingPage'
-import UserPage from './pages/UserPage'
+import LandingPage from './pages/landing-page/LandingPage'
+import UserPage from './pages/user-pages/UserPage'
 import './App.css';
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-      { state.isLogin ? <UserPage /> : <LandingPage />}
+      {state.isLogin ? <UserPage /> : <LandingPage />}
     </>
   );
 }

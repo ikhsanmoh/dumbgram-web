@@ -8,7 +8,7 @@ import iCompass from '../../assets/icons/compass-icon.png'
 import iExit from '../../assets/icons/exit-icon.png'
 import Photos from '../../assets/Assets';
 
-import './profiles.css';
+import './Profiles.css';
 
 const UserProfile = ({ showEditButton }) => {
   const [state, dispatch] = useContext(UserContext)

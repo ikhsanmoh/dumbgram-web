@@ -2,23 +2,23 @@ import { useState } from 'react';
 
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
-import UserProfile from '../components/profile/UserProfile'
-import PeopleProfile from '../components/profile/PeopleProfiles'
-import CreatePost from './CreatePost';
-import Feed from './Feed'
-import Explore from './Explore';
-import Messages from './message/Mesagges'
-import Chat from './message/Chat'
-import EditProfile from '../pages/edit-profile/EditProfile';
+import UserProfile from '../profile/UserProfile'
+import PeopleProfile from '../profile/PeopleProfiles'
+import CreatePost from '../create-post/CreatePost';
+import Feed from '../feed/Feed'
+import Explore from '../explore/Explore';
+import Messages from '../message/Mesagges'
+import Chat from '../message/Chat'
+import EditProfile from '../edit-profile/EditProfile';
 
-import Notification from '../components/modal/Notification';
+import Notification from '../../components/modal/Notification';
 
-import logo from '../assets/logo-dumbgram.png'
-import iBell from '../assets/icons/bell-icon.png'
-import iMsg from '../assets/icons/paper-plane-icon.png'
-import iSearch from '../assets/icons/search-icon.png'
-import iAdd from '../assets/icons/add-icon.png'
-import './userPage.css'
+import logo from '../../assets/logo-dumbgram.png'
+import iBell from '../../assets/icons/bell-icon.png'
+import iMsg from '../../assets/icons/paper-plane-icon.png'
+import iSearch from '../../assets/icons/search-icon.png'
+import iAdd from '../../assets/icons/add-icon.png'
+import './UserPage.css'
 
 const UserPage = () => {
   const [notifModal, setNotifModal] = useState(false);

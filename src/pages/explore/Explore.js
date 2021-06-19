@@ -1,5 +1,5 @@
-import Photos from '../assets/Assets'
-import iFollowedUser from '../assets/photo-prof.png'
+import Photos from '../../assets/Assets'
+import iFollowedUser from '../../assets/photo-prof.png'
 
 const Explore = () => {
   return (
