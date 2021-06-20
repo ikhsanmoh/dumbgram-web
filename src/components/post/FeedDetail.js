@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 
 import RetangledImage from '../frame/RetangledImage';
 import RoundedImage from '../frame/RoundedImage';
+import { BackgroundBase } from '../frame/RetangledImage';
 import Comments from './Comments'
 import Comment from './Comment';
 import FeedAction from './FeedAction'
@@ -27,7 +28,7 @@ const FeedDetail = ({ modalStat, modalClose, feedData }) => {
         <div className="feed-detail-wrapper">
           <div className="close-modal" onClick={modalClose}>X</div>
           <div className="detail-left">
-            <RetangledImage image={feedData?.image} />
+            <BackgroundBase image={feedData?.image} />
           </div>
           <div className="detail-right">
             <div className="row-1">

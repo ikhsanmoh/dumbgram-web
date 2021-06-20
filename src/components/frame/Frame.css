@@ -20,3 +20,15 @@
 .retangled img {
   border-radius: 10px;
 }
+
+.retangled {
+  background-color: black;
+}
+.retangled .background-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px 0 0 5px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
