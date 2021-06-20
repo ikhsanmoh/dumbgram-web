@@ -1,6 +1,6 @@
 .user-profile-container {
   position: relative;
-  padding: 0 50px;
+  /* padding: 0 50px; */
 }
 
 .user-profile-container > * {
@@ -43,7 +43,7 @@
   border-left: 1px solid rgba(106, 106, 106, 0.3);
 }
 
-.user-profile-container .navigation {
+/* .user-profile-container .navigation {
   border-top: 1px solid rgba(106, 106, 106, 0.3);
   border-bottom: 1px solid rgba(106, 106, 106, 0.3);
 }
@@ -64,4 +64,4 @@
 
 .user-profile-container .logout {
   cursor: pointer;
-}
+} */

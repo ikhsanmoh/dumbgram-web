@@ -1,25 +1,27 @@
-import { Link } from 'react-router-dom'
-import { useContext } from 'react'
-import { UserContext } from '../../context/userContext'
+import { Link, useParams } from 'react-router-dom'
 
-import RoundedImage from '../../components/frame/RoundedImage'
+import RoundedImage from '../frame/RoundedImage'
 
-import iEdit from '../../assets/icons/edit-icon.png'
 import Photos from '../../assets/Assets';
+import iEdit from '../../assets/icons/edit-icon.png'
 
-import './Profiles.css';
+const src = Photos.find(p => p.name === 'img6')
 
-const UserProfile = ({ showEditButton }) => {
-  const [state, dispatch] = useContext(UserContext)
+const Profile = ({ owner, showEditButton }) => {
 
-  const destroySession = () => {
-    dispatch({
-      type: 'LOGOUT',
-      payload: {}
-    })
+  //! Do conditional to check if id params is set
+  //! Do conditional to check if id is not logged user
+  //TODO: The goal is to render user profile or people profile based on id check
+
+  let button
+  if (owner) {
+    button = (
+      <div className="action">
+        <button className="btn btn-bg-main">Message</button>
+        <button className="btn btn-bg-dark">Unfollow</button>
+      </div>
+    )
   }
-
-  const src = Photos.find(p => p.name === 'img6')
 
   return (
     <div className="user-profile-container">
@@ -39,6 +41,7 @@ const UserProfile = ({ showEditButton }) => {
           <h2>Lisa</h2>
           <p>@lalalisa</p>
         </div>
+        {button}
       </div>
       <div className="info">
         <div className="posts">
@@ -59,8 +62,8 @@ const UserProfile = ({ showEditButton }) => {
   )
 }
 
-UserProfile.defaultProps = {
+Profile.defaultProps = {
   showEditButton: true
 }
 
-export default UserProfile
+export default Profile

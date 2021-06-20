@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useState } from 'react';
 
 import RoundedImage from '../../components/frame/RoundedImage'
@@ -17,6 +17,9 @@ import FeedDetail from '../../components/post/FeedDetail'
 const FeedLayout = ({ title }) => {
   const [detailModal, setDetailModal] = useState(false);
   const [feedData, setFeedData] = useState(false)
+
+  //! Do conditional to check if given id is unmatch the logged user
+  //TODO: The goal is to render title with default string or with people name
 
   const detailModalToggle = (obj) => {
     console.log('Detail Modal Toggle...');

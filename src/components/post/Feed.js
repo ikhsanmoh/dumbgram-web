@@ -17,7 +17,7 @@ const Feed = ({ feed, onClick }) => {
         <RetangledImage image={feed.image} />
       </div>
       <div className="info">
-        <Link className="user" to='/zayn'>
+        <Link className="user" to={`/profile/${feed.id}`}>
           <div className="user-img">
             <RoundedImage image={feed.userImage} size='25px' />
           </div>

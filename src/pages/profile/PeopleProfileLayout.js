@@ -47,30 +47,6 @@ const PeopleProfileLayout = ({ id }) => {
       </div>
       <p>Nobody is Listening Out Now!</p>
       <small>www.inzayn.com</small>
-      <div className="navigation">
-        <Link className="feed" to="/feed">
-          <div className="icon">
-            <img src={iHome} alt="icon" />
-          </div>
-          <div className="label">Feed</div>
-        </Link>
-        <Link className="explore" to='/explore'>
-          <div className="icon">
-            <img src={iCompass} alt="icon" />
-          </div>
-          <div className="label">
-            Explore
-          </div>
-        </Link>
-      </div>
-      <div className="logout">
-        <div className="icon">
-          <img src={iExit} alt="icon" />
-        </div>
-        <div className="label">
-          Logout
-        </div>
-      </div>
     </div>
   )
 }
