@@ -1,9 +1,9 @@
 import { PhotoCircle } from '../../assets/Assets'
 
 
-import './Chat.css';
+import './ChatHistoryLayout.css'
 
-const Chat = ({ personalChat }) => {
+const ChatHistoryLayout = ({ personalChat }) => {
   let displayedChat = ''
 
   console.log(personalChat);
@@ -37,8 +37,8 @@ const Chat = ({ personalChat }) => {
   )
 }
 
-Chat.defaultProps = {
+ChatHistoryLayout.defaultProps = {
   personalChat: false
 }
 
-export default Chat
+export default ChatHistoryLayout

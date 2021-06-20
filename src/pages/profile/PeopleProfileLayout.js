@@ -4,7 +4,7 @@ import iCompass from '../../assets/icons/compass-icon.png'
 import iExit from '../../assets/icons/exit-icon.png'
 
 import { Link } from 'react-router-dom'
-const PeopleProfiles = ({ id }) => {
+const PeopleProfileLayout = ({ id }) => {
 
   const myStyle = {
     width: '60%',
@@ -75,4 +75,4 @@ const PeopleProfiles = ({ id }) => {
   )
 }
 
-export default PeopleProfiles
+export default PeopleProfileLayout

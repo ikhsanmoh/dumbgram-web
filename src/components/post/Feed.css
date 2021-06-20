@@ -1,17 +1,5 @@
-.posts-wrapper {
-  /* display: flex;
-  flex-direction: column; */
-  width: 100%;
-  padding-top: 20px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1em;
-}
-
 .card {
-  /* border: 2px solid rgba(255,255,255,.20); */
   height: max-content;
-  /* width: 33% */
 }
 
 .card .thumbnail {
@@ -37,19 +25,6 @@
 
 .card .info .user .user-img {
   width: 25px;
-}
-
-.card .info .action {
-  display: inherit;
-}
-
-.card .info .action > * {
-  margin-left: 10px;
-}
-
-.like, .comment, .message {
-  width: 20px;
-  height: auto;
 }
 
 .card .likes {

@@ -3,13 +3,13 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import Header from '../../components/base-layout/Header'
 
 import UserProfile from '../profile/UserProfile'
-import PeopleProfile from '../profile/PeopleProfiles'
-import CreatePost from '../create-post/CreatePost';
-import Feed from '../feed/Feed'
-import Explore from '../explore/Explore';
-import Messages from '../message/Mesagges'
-import Chat from '../message/Chat'
-import EditProfile from '../edit-profile/EditProfile';
+import PeopleProfileLayout from '../profile/PeopleProfileLayout'
+import CreatePostLayout from '../create-post/CreatePostLayout';
+import FeedLayout from '../feed/FeedLayout'
+import ExploreLayout from '../explore/ExploreLayout';
+import InboxLayout from '../message/InboxLayout'
+import ChatHistoryLayout from '../message/ChatHistoryLayout'
+import EditProfileLayout from '../edit-profile/EditProfileLayout';
 
 import logo from '../../assets/logo-dumbgram.png'
 import './UserPage.css'
@@ -19,49 +19,49 @@ const ROUTES = [
     path: '/',
     exact: true,
     sidebar: () => <UserProfile />,
-    main: () => <Feed />
+    main: () => <FeedLayout />
   },
   {
     path: '/edit-profile',
     exact: true,
     sidebar: () => <UserProfile showEditButton={false} />,
-    main: () => <EditProfile />
+    main: () => <EditProfileLayout />
   },
   {
     path: '/feed',
     exact: true,
     sidebar: () => <UserProfile />,
-    main: () => <Feed />
+    main: () => <FeedLayout />
   },
   {
     path: '/explore',
     exact: true,
     sidebar: () => <UserProfile />,
-    main: () => <Explore />
+    main: () => <ExploreLayout />
   },
   {
     path: '/messages',
     exact: true,
-    sidebar: () => <Messages />,
-    main: () => <Chat />
+    sidebar: () => <InboxLayout />,
+    main: () => <ChatHistoryLayout />
   },
   {
     path: '/messages/1',
     exact: true,
-    sidebar: () => <Messages />,
-    main: () => <Chat personalChat={['Hello Lisa']} />
+    sidebar: () => <InboxLayout />,
+    main: () => <ChatHistoryLayout personalChat={['Hello Lisa']} />
   },
   {
     path: '/create-post',
     exact: true,
     sidebar: () => <UserProfile />,
-    main: () => <CreatePost />
+    main: () => <CreatePostLayout />
   },
   {
     path: '/zayn',
     exact: true,
-    sidebar: () => <PeopleProfile />,
-    main: () => <Feed title='Zayn, Feed' />
+    sidebar: () => <PeopleProfileLayout />,
+    main: () => <FeedLayout title='Zayn, Feed' />
   },
 ]
 

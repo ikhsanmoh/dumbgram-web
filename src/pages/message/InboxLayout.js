@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 import { PhotoCircle } from '../../assets/Assets'
-import './Messages.css'
+import './InboxLayout.css'
 
-const Messages = () => {
+const InboxLayout = () => {
   return (
     <div className="messages-wrapper">
       <Link to='/messages/1'>
@@ -38,4 +38,4 @@ const Messages = () => {
   )
 }
 
-export default Messages
+export default InboxLayout

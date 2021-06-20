@@ -1,0 +1,5 @@
+.people {
+  display: flex;
+  flex-flow: row nowrap;  
+  padding: 8px 0;
+}

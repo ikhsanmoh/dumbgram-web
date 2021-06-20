@@ -62,17 +62,6 @@
   height: max-height;
 }
 
-.detail-right .row-3 .actions {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-end;
-}
-
-.detail-right .row-3 .actions > * {
-  margin-left: 10px;
-  width: 15px;
-}
-
 .detail-right .row-3 .likes {
   margin-top: 14px;
   text-align: right

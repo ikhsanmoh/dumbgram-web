@@ -1,6 +1,6 @@
-import './EditProfile.css'
+import './EditProfileLayout.css'
 
-const EditProfile = () => {
+const EditProfileLayout = () => {
   return (
     <div>
       <h1>Edit Profile</h1>
@@ -23,4 +23,4 @@ const EditProfile = () => {
   )
 }
 
-export default EditProfile
+export default EditProfileLayout

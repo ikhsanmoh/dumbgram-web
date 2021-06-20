@@ -1,6 +1,6 @@
-import './CreatePost.css';
+import './CreatePostLayout.css';
 
-const CreatePost = () => {
+const CreatePostLayout = () => {
 
   const createPostHandler = (e) => {
     e.preventDefault();
@@ -26,4 +26,4 @@ const CreatePost = () => {
   )
 }
 
-export default CreatePost
+export default CreatePostLayout

@@ -1,0 +1,10 @@
+.feed-action-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+}
+
+.feed-action-wrapper > * {
+  margin-left: 10px;
+  cursor: pointer;
+}

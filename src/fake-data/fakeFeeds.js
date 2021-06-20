@@ -1,6 +1,6 @@
 import Photos from '../assets/Assets'
 
-const Feeds = [
+const fakeFeeds = [
   {
     username: 'zayn',
     userImage: Photos[2],
@@ -45,4 +45,4 @@ const Feeds = [
   },
 ]
 
-export default Feeds
+export default fakeFeeds

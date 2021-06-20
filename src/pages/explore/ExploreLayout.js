@@ -1,15 +1,14 @@
 import RetangledImage from '../../components/frame/RetangledImage';
 
-import Feeds from '../../fake-data/Feeds'
+import fakeFeeds from '../../fake-data/fakeFeeds'
 
-const Explore = () => {
+const ExploreLayout = () => {
   return (
     <div>
       <h1>Expolore</h1>
-      <div className="posts-wrapper">
-
+      <div className="feeds-wrapper">
         {
-          Feeds.map(
+          fakeFeeds.map(
             (feed, index) => (
               <div key={index} className="card">
                 <div className="thumbnail">
@@ -24,4 +23,4 @@ const Explore = () => {
   )
 }
 
-export default Explore
+export default ExploreLayout
