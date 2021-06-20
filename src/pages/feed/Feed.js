@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
+import RoundedImage from '../../components/frame/RoundedImage'
+import RetangledImage from '../../components/frame/RetangledImage';
+
 import Photos from '../../assets/Assets'
 import iFollowedUser from '../../assets/photo-prof.png'
 
@@ -20,6 +23,9 @@ const Feed = ({ title }) => {
     setDetailModal(!detailModal)
     setPostData(e)
   }
+
+  const src = Photos.find(p => p.name === 'img2')
+
   return (
     <div>
       <h1>{title}</h1>
@@ -29,12 +35,12 @@ const Feed = ({ title }) => {
             (img, index) => (
               <div key={index} className="card">
                 <div className="thumbnail" onClick={() => detailModalToggle(img.file)}>
-                  <img src={img.file} alt={img.name} />
+                  <RetangledImage image={img} />
                 </div>
                 <div className="info">
                   <Link className="user" to='/zayn'>
                     <div className="user-img">
-                      <img src={iFollowedUser} alt="" />
+                      <RoundedImage image={src} size='25px' />
                     </div>
                     <div className="username">
                       <h4>zayn</h4>

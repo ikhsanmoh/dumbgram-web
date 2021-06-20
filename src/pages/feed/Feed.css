@@ -20,9 +20,6 @@
   cursor: pointer;
 }
 
-.card .thumbnail img {
-  border-radius: 10px;
-}
 .card .info {
   display: flex;
   padding: 10px 0;

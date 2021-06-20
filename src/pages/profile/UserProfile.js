@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import { UserContext } from '../../context/userContext'
 
+import RoundedImage from '../../components/frame/RoundedImage'
+
 import iEdit from '../../assets/icons/edit-icon.png'
 import iHome from '../../assets/icons/home-icon.png'
 import iCompass from '../../assets/icons/compass-icon.png'
@@ -21,9 +23,6 @@ const UserProfile = ({ showEditButton }) => {
   }
 
   const src = Photos.find(p => p.name === 'img6')
-  const photoProfile = {
-    backgroundImage: `url(${src.file})`
-  }
 
   return (
     <div className="user-profile-container">
@@ -37,9 +36,7 @@ const UserProfile = ({ showEditButton }) => {
       }
       <div className="profile">
         <div className="photo">
-          <div className="border">
-            <div className="circle" style={photoProfile}></div>
-          </div>
+          <RoundedImage image={src} size='200px' />
         </div>
         <div className="account">
           <h2>Lisa</h2>
