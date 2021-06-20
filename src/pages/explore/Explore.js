@@ -1,5 +1,6 @@
-import Photos from '../../assets/Assets'
-import iFollowedUser from '../../assets/photo-prof.png'
+import RetangledImage from '../../components/frame/RetangledImage';
+
+import Feeds from '../../fake-data/Feeds'
 
 const Explore = () => {
   return (
@@ -8,11 +9,11 @@ const Explore = () => {
       <div className="posts-wrapper">
 
         {
-          Photos.map(
-            (img, index) => (
+          Feeds.map(
+            (feed, index) => (
               <div key={index} className="card">
                 <div className="thumbnail">
-                  <img src={img.file} alt={img.name} />
+                  <RetangledImage image={feed.image} />
                 </div>
               </div>
             )

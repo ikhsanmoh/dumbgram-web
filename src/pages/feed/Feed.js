@@ -4,8 +4,7 @@ import { useState } from 'react';
 import RoundedImage from '../../components/frame/RoundedImage'
 import RetangledImage from '../../components/frame/RetangledImage';
 
-import Photos from '../../assets/Assets'
-import iFollowedUser from '../../assets/photo-prof.png'
+import Feeds from '../../fake-data/Feeds'
 
 import iLike from "../../assets/icons/love-icon.png"
 import iComment from "../../assets/icons/comment-icon.png"
@@ -24,23 +23,21 @@ const Feed = ({ title }) => {
     setPostData(e)
   }
 
-  const src = Photos.find(p => p.name === 'img2')
-
   return (
     <div>
       <h1>{title}</h1>
       <div className="posts-wrapper">
         {
-          Photos.map(
-            (img, index) => (
+          Feeds.map(
+            (feed, index) => (
               <div key={index} className="card">
-                <div className="thumbnail" onClick={() => detailModalToggle(img.file)}>
-                  <RetangledImage image={img} />
+                <div className="thumbnail" onClick={() => detailModalToggle(feed.image)}>
+                  <RetangledImage image={feed.image} />
                 </div>
                 <div className="info">
                   <Link className="user" to='/zayn'>
                     <div className="user-img">
-                      <RoundedImage image={src} size='25px' />
+                      <RoundedImage image={feed.userImage} size='25px' />
                     </div>
                     <div className="username">
                       <h4>zayn</h4>
@@ -58,7 +55,7 @@ const Feed = ({ title }) => {
                     </div>
                   </div>
                 </div>
-                <div className="likes">126.100 Like</div>
+                <div className="likes">{feed.likes} Like</div>
               </div>
             )
           )
