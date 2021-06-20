@@ -10,14 +10,6 @@ import Photos from '../../assets/Assets';
 import './Profiles.css';
 
 const UserProfile = ({ showEditButton }) => {
-  const [state, dispatch] = useContext(UserContext)
-
-  const destroySession = () => {
-    dispatch({
-      type: 'LOGOUT',
-      payload: {}
-    })
-  }
 
   const src = Photos.find(p => p.name === 'img6')
 

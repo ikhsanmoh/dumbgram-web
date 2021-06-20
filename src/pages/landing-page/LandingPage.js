@@ -11,21 +11,21 @@ const LandingPage = () => {
   const [modalLogin, setModalLogin] = useState(false);
   const [modalRegist, setModalRegist] = useState(false);
 
-  const [users, setUsers] = useState([
-    {
-      id: 1,
-      name: 'user1',
-      email: 'user',
-      password: 'user'
-    }
-  ])
+  // const [users, setUsers] = useState([
+  //   {
+  //     id: 1,
+  //     name: 'user1',
+  //     email: 'user',
+  //     password: 'user'
+  //   }
+  // ])
 
-  useEffect(() => {
-    if (users.length > 0) {
-      console.log('Checking Registed Users...')
-      console.table(users);
-    }
-  }, [users])
+  // useEffect(() => {
+  //   if (users.length > 0) {
+  //     console.log('Checking Registed Users...')
+  //     console.table(users);
+  //   }
+  // }, [users])
 
   const loginModalToggle = (e) => {
     setModalLogin(!modalLogin)
@@ -43,15 +43,14 @@ const LandingPage = () => {
     setModalRegist(!modalRegist)
   }
 
-  const addUser = (user) => {
-    const id = Math.floor(Math.random() * 1000) + 1 // id maker
-    const newUser = { id, ...user }
-    setUsers(users => [...users, newUser])
-  }
+  // const addUser = (user) => {
+  //   const id = Math.floor(Math.random() * 1000) + 1 // id maker
+  //   const newUser = { id, ...user }
+  //   setUsers(users => [...users, newUser])
+  // }
 
   return (
     <>
-      {console.log('Rendering...')}
       <div className="container">
         <div className="wrapper">
           <div className="landing-page">
@@ -80,8 +79,8 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <LoginModal switchModal={switchModalToggle} modalStat={modalLogin} modalClose={loginModalToggle} usersRegisted={users} />
-      <RegistrationModal switchModal={switchModalToggle} modalStat={modalRegist} modalClose={registModalToggle} onAddUser={addUser} />
+      <LoginModal switchModal={switchModalToggle} modalStat={modalLogin} modalClose={loginModalToggle} />
+      <RegistrationModal switchModal={switchModalToggle} modalStat={modalRegist} modalClose={registModalToggle} />
     </>
   )
 }

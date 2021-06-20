@@ -5,8 +5,6 @@ import './Modal.css';
 ReactModal.setAppElement('#root')
 
 const Modal = ({ children, modalStat, modalClose, customStyles }) => {
-  console.log('Modal Run...', modalStat);
-  console.log(customStyles.notifModal);
   return (
     <div>
       <ReactModal

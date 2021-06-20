@@ -1,25 +1,46 @@
 import { useState } from 'react'
+import { API, setAuthToken } from '../../config/api'
 import Modal from './Modal'
 import './FormsModal.css'
 
-const RegistrationModal = ({ switchModal, modalStat, modalClose, onAddUser }) => {
+const RegistrationModal = ({ switchModal, modalStat, modalClose }) => {
   const [email, setEmail] = useState('')
   const [name, setName] = useState('')
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
-  const onSubmitHandler = (e) => {
-    e.preventDefault()
+  const onSubmitHandler = async (e) => {
+    try {
+      e.preventDefault()
 
-    onAddUser({ email, name, username, password })
+      const config = {
+        headers: {
+          "Content-type": "application/json"
+        }
+      }
 
-    setEmail('')
-    setName('')
-    setUsername('')
-    setPassword('')
+      const body = JSON.stringify({
+        email,
+        username,
+        password,
+        fullName: name
+      })
 
-    alert('Registration Success!')
-    modalClose()
+      const response = await API.post("/register", body, config)
+
+      if (response.status === 200) {
+        alert('Registration Success!')
+      }
+
+      setEmail('')
+      setName('')
+      setUsername('')
+      setPassword('')
+
+      modalClose()
+    } catch (error) {
+      alert(error?.response?.data?.message)
+    }
   }
 
   return (
@@ -61,7 +82,7 @@ const RegistrationModal = ({ switchModal, modalStat, modalClose, onAddUser }) =>
           </form>
           <p>
             Already have an account ? Klik
-        <b>
+            <b>
               <a
                 id='login'
                 href="?"
@@ -70,7 +91,7 @@ const RegistrationModal = ({ switchModal, modalStat, modalClose, onAddUser }) =>
                   switchModal(e.target.id)
                 }}
               > Here
-          </a>
+              </a>
             </b>
           </p>
         </div>

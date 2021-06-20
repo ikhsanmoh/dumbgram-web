@@ -1,32 +1,45 @@
 import { useState, useContext } from 'react'
 import { UserContext } from '../../context/userContext'
+import { API, setAuthToken } from '../../config/api'
 import Modal from './Modal';
 import './FormsModal.css'
 
-const LoginModal = ({ switchModal, modalStat, modalClose, usersRegisted }) => {
+const LoginModal = ({ switchModal, modalStat, modalClose }) => {
   const [state, dispatch] = useContext(UserContext)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const onSubmitHandler = (e) => {
-    e.preventDefault()
+  const onSubmitHandler = async (e) => {
+    try {
+      e.preventDefault()
+      const config = {
+        headers: {
+          "Content-type": "application/json"
+        }
+      }
 
-    let auth = false;
-    auth = usersRegisted.find(user => user.email === email && user.password === password)
-
-    if (auth) {
-      dispatch({
-        type: 'LOGIN',
-        payload: { ...auth }
+      const body = JSON.stringify({
+        email,
+        password
       })
-      alert('Login success!')
-      modalClose()
-    } else {
-      alert('Login Unsuccessful, Email atau Password salah!')
-    }
 
-    setEmail('')
-    setPassword('')
+      const response = await API.post("/login", body, config)
+
+      if (response.status === 200) {
+        setAuthToken(response.data.data.user.token)
+        dispatch({
+          type: 'LOGIN',
+          payload: response.data.data.user
+        })
+        alert('Login success!')
+        modalClose()
+      }
+
+      setEmail('')
+      setPassword('')
+    } catch (error) {
+      alert(error?.response?.data?.message)
+    }
   }
 
   return (
@@ -55,7 +68,7 @@ const LoginModal = ({ switchModal, modalStat, modalClose, usersRegisted }) => {
           </form>
           <p>
             Don't have an account ? Klik
-          <b>
+            <b>
               <a
                 id='regist'
                 href='?'
@@ -64,7 +77,7 @@ const LoginModal = ({ switchModal, modalStat, modalClose, usersRegisted }) => {
                   switchModal(e.target.id)
                 }}
               > Here
-          </a>
+              </a>
             </b>
           </p>
         </div>
