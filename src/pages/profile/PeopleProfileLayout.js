@@ -26,7 +26,7 @@ const PeopleProfileLayout = ({ id }) => {
           <h2>Zayn Malik</h2>
           <p>@zayn</p>
         </div>
-        <div className="action">
+        <div className="profil-action">
           <button className="btn btn-bg-main">Message</button>
           <button className="btn btn-bg-dark">Unfollow</button>
         </div>

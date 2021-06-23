@@ -1,13 +1,14 @@
 import './Frame.css'
 
-const RoundedImage = ({ image, size }) => {
+const RoundedImage = ({ image, size, zoom }) => {
   const img = {
     backgroundImage: `url(${image.file})`,
   }
 
   const sizes = {
     width: size,
-    height: size
+    height: size,
+    backgroundSize: zoom
   }
 
   return (
@@ -21,7 +22,8 @@ const RoundedImage = ({ image, size }) => {
 
 RoundedImage.defaultProps = {
   image: {},
-  size: '100px'
+  size: '100px',
+  zoom: '120%'
 }
 
 export default RoundedImage

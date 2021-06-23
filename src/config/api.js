@@ -5,9 +5,7 @@ export const API = axios.create({
 })
 
 export const setAuthToken = (token) => {
-  console.log('set Auth run...');
   if (token) {
-    console.log('Set Auth:', token);
     API.defaults.headers.common["Authorization"] = `Bearer ${token}`
   } else {
     delete API.defaults.headers.commin["Authorization"]

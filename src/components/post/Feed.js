@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import { API, setAuthToken } from '../../config/api'
+import { useState, useEffect } from 'react';
 
 import RoundedImage from '../frame/RoundedImage'
 import RetangledImage from '../frame/RetangledImage';
@@ -10,7 +12,31 @@ import iMsg from "../../assets/icons/paper-plane-icon.png"
 
 import './Feed.css'
 
-const Feed = ({ feed, onClick }) => {
+const Feed = ({ feed, onClick, reloadFeeds }) => {
+
+  const addLike = async () => {
+    try {
+      const config = {
+        headers: {
+          "Content-type": "application/json"
+        }
+      }
+
+      const body = JSON.stringify({
+        id: feed.id
+      })
+
+      const response = await API.post("/like", body, config)
+
+      if (response.status === 200) {
+        alert('Liked')
+        reloadFeeds()
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   return feed && (
     <div className="card" >
       <div className="thumbnail" onClick={() => onClick(feed)}>
@@ -26,7 +52,7 @@ const Feed = ({ feed, onClick }) => {
           </div>
         </Link>
         <div>
-          <FeedAction />
+          <FeedAction likeEvent={addLike} />
         </div>
       </div>
       <div className="likes">{feed.likes} Like</div>

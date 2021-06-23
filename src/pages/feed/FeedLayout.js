@@ -1,5 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { UserContext } from '../../context/userContext'
+import { API } from '../../config/api'
 
 import RoundedImage from '../../components/frame/RoundedImage'
 import RetangledImage from '../../components/frame/RetangledImage';
@@ -16,15 +18,26 @@ import FeedDetail from '../../components/post/FeedDetail'
 
 const FeedLayout = ({ title }) => {
   const [detailModal, setDetailModal] = useState(false);
-  const [feedData, setFeedData] = useState(false)
+  const [feed, setFeed] = useState(false)
+  const [feeds, setFeeds] = useState(false)
+  const [like, setLike] = useState(0)
 
-  //! Do conditional to check if given id is unmatch the logged user
-  //TODO: The goal is to render title with default string or with people name
+  const loadFeeds = async () => {
+    try {
+      const response = await API.get('/feeds')
+      setFeeds(response.data.data.feeds)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  useEffect(() => {
+    loadFeeds()
+  }, [])
 
   const detailModalToggle = (obj) => {
-    console.log('Detail Modal Toggle...');
     setDetailModal(!detailModal)
-    setFeedData(obj)
+    setFeed(obj)
   }
 
   return (
@@ -38,7 +51,7 @@ const FeedLayout = ({ title }) => {
             )
           ) : <h2>No Feed Available</h2>}
       </div>
-      <FeedDetail modalStat={detailModal} modalClose={detailModalToggle} feedData={feedData} />
+      <FeedDetail modalStat={detailModal} modalClose={detailModalToggle} feedData={feed} reloadFeeds={loadFeeds} />
     </div >
   )
 }

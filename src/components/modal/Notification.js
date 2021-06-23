@@ -4,8 +4,6 @@ import customModalStyles from './NotificationModal.module.css'
 import './Notification.css'
 
 const Notification = ({ modalStat, modalClose }) => {
-  console.log('Notif Run...', modalStat);
-  console.log(customModalStyles);
   return (
     <>
       <Modal customStyles={customModalStyles} modalStat={modalStat} modalClose={modalClose}>

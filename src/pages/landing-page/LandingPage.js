@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import logo from '../../assets/logo-dumbgram.png'
-import Photos from '../../assets/Assets'
+import { LandingPagePhoto } from '../../assets/Assets'
 import Button from '../../components/button/Button'
 import LoginModal from '../../components/modal/LoginModal'
 import './LandingPage.css'
@@ -11,43 +11,18 @@ const LandingPage = () => {
   const [modalLogin, setModalLogin] = useState(false);
   const [modalRegist, setModalRegist] = useState(false);
 
-  // const [users, setUsers] = useState([
-  //   {
-  //     id: 1,
-  //     name: 'user1',
-  //     email: 'user',
-  //     password: 'user'
-  //   }
-  // ])
-
-  // useEffect(() => {
-  //   if (users.length > 0) {
-  //     console.log('Checking Registed Users...')
-  //     console.table(users);
-  //   }
-  // }, [users])
-
   const loginModalToggle = (e) => {
     setModalLogin(!modalLogin)
-    console.log('Login Modal Toggle...')
   }
 
   const registModalToggle = (e) => {
     setModalRegist(!modalRegist)
-    console.log('Regist Modal Toggle...')
   }
 
   const switchModalToggle = () => {
-    console.log('Switch Modal...');
     setModalLogin(!modalLogin)
     setModalRegist(!modalRegist)
   }
-
-  // const addUser = (user) => {
-  //   const id = Math.floor(Math.random() * 1000) + 1 // id maker
-  //   const newUser = { id, ...user }
-  //   setUsers(users => [...users, newUser])
-  // }
 
   return (
     <>
@@ -70,7 +45,7 @@ const LandingPage = () => {
             <div className="flex-item">
               <div className="gallery-wrapper">
                 {
-                  Photos.map(
+                  LandingPagePhoto.map(
                     (img, index) => <img className="gallery-items" key={index} src={img.file} alt={img.name}></img>
                   )
                 }

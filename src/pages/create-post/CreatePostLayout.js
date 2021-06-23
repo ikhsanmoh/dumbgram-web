@@ -1,9 +1,17 @@
+import { useState, useContext } from 'react'
+import { UserContext } from '../../context/userContext'
+
 import './CreatePostLayout.css';
 
 const CreatePostLayout = () => {
 
-  const createPostHandler = (e) => {
-    e.preventDefault();
+  const createPostHandler = async (e) => {
+    try {
+      e.preventDefault();
+
+    } catch (error) {
+
+    }
   }
 
   return (

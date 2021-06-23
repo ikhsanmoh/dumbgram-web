@@ -26,12 +26,12 @@ const LoginModal = ({ switchModal, modalStat, modalClose }) => {
       const response = await API.post("/login", body, config)
 
       if (response.status === 200) {
+        alert('Login success!')
         setAuthToken(response.data.data.user.token)
         dispatch({
           type: 'LOGIN',
           payload: response.data.data.user
         })
-        alert('Login success!')
         modalClose()
       }
 

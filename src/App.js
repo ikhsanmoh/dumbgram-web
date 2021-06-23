@@ -15,7 +15,13 @@ if (localStorage.access_token) {
 
 function App() {
   const [state, dispatch] = useContext(UserContext)
-  console.log(state);
+  console.log("🚀 ~ file: App.js ~ line 18 ~ App ~ state", state)
+
+  useEffect(() => {
+    if (localStorage.access_token) {
+      tokenValidation()
+    }
+  }, [])
 
   const tokenValidation = async () => {
     try {
@@ -32,16 +38,12 @@ function App() {
       }
     } catch (err) {
       if (err.response.status === 404 || err.response.status === 401) {
-        return dispatch({
+        dispatch({
           type: "AUTH_ERROR"
         })
       }
     }
   }
-
-  useEffect(() => {
-    tokenValidation()
-  }, [])
 
   return (
     <>
